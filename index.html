@@ -5,30 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semana da Desinflamação - Transforme Sua Vida em 7 Dias</title>
     
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;
-        n.push=n;
-        n.loaded=!0;
-        n.version='2.0';
-        n.queue=[];
-        t=b.createElement(e);
-        t.async=!0;
-        t.src=v;
-        s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)
-        }(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '595481199331116');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-           src="https://www.facebook.com/tr?id=595481199331116&ev=PageView&noscript=1"/>
-    </noscript>
+   <!-- Meta Pixel com eventID para deduplicação -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+/* 1) Seu Pixel ID (mantém o mesmo) */
+fbq('init', '595481199331116');
+
+/* 2) Gera um ID único por carregamento de página
+      - salvamos em window.metaEventId para você (ou o servidor) reutilizar */
+(function(){
+  function uuidv4(){
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+      var r=Math.random()*16|0, v=c==='x'?r:(r&0x3|0x8);
+      return v.toString(16);
+    });
+  }
+  window.metaEventId = uuidv4();
+})();
+
+/* 3) Envia PageView com eventID (requisito para deduplicar com a CAPI) */
+fbq('track', 'PageView', {}, { eventID: window.metaEventId });
+</script>
+
+<noscript>
+  <img alt="fb pixel" height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=595481199331116&ev=PageView&noscript=1"/>
+</noscript>
+<!-- /Meta Pixel -->
+
     
     <style>
         * {
@@ -476,6 +484,123 @@
                 transform: translateX(-50%) translateY(-5px);
             }
         }
+
+              /* SEÇÃO “Quem sou eu” */
+        .about-section {
+            background: linear-gradient(135deg, #DEA37B 0%, #FCF9CE 100%);
+            color: #D64C4A;
+            padding: 50px 30px;
+            border-radius: 25px;
+            margin: 50px 0;
+            box-shadow: 0 20px 40px rgba(222, 163, 123, 0.4);
+            border: 3px solid #D64C4A;
+        }
+
+        .about-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            color: #D64C4A;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-photo {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .about-photo img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #D64C4A;
+            box-shadow: 0 10px 30px rgba(214, 76, 74, 0.3);
+        }
+
+        .photo-placeholder {
+            width: 250px;
+            height: 250px;
+            background: rgba(214, 76, 74, 0.2);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            text-align: center;
+            border: 5px solid #D64C4A;
+            box-shadow: 0 10px 30px rgba(214, 76, 74, 0.3);
+            color: #D64C4A;
+        }
+
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about-text p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-text .final-message {
+            font-size: 1.3em;
+            text-align: center;
+            background: rgba(214, 76, 74, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid #D64C4A;
+            color: #D64C4A;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .about-photo img,
+            .photo-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+        }
+          .btn--instagram{background:#fff0f5;color:#e1306c;border-color:#ffcfe0}
+  .btn--instagram:hover{filter:brightness(0.98)}
+    .btn{
+    display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1rem;border-radius:999px;
+    font-weight:700;text-decoration:none;border:1px solid transparent;transition:transform .06s, filter .2s
+  }
+
+    .btn:active{transform:translateY(1px)}
+  .btn--whatsapp{background:#25D366;color:#fff;border-color:#22c65b}
+  .btn--whatsapp:hover{filter:brightness(0.97)}
+  .btn--instagram{background:#fff0f5;color:#e1306c;border-color:#ffcfe0}
+  .btn--instagram:hover{filter:brightness(0.98)}
+  .btn--email{background:#f3f0ff;color:#4b3fd6;border-color:#ddd5ff}
+  .btn--email:hover{filter:brightness(0.98)}
+  @media (max-width:640px){
+    .support-block{padding:14px}
+    .btn{width:100%;justify-content:center}
+  }
+
     </style>
 </head>
 
@@ -483,7 +608,7 @@
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <h1>🌿 Semana da <strong>Desinflamação</strong></h1>
+            <h1>Semana da <strong>Desinflamação</strong></h1>
             <p class="subtitle">7 dias que vão transformar sua vida e destravar a queima de gordura!</p>
             <div class="highlight">
                 ✨ Reduza o inchaço, aumente a energia e sinta-se mais leve em apenas 1 semana! ✨
@@ -509,9 +634,9 @@
 
         <!-- Solution Section -->
         <section class="solution-section">
-            <h2>🎯 A Solução Está Aqui!</h2>
-            <p>A <strong>Semana da Desinflamação</strong> é um protocolo científico de 7 dias que vai resetar seu corpo, reduzir a inflamação crônica e destravar sua queima de gordura naturalmente.</p>
-            <p>Não é uma dieta restritiva. É um método inteligente que ensina seu corpo a funcionar da forma correta novamente!</p>
+            <h2>🎯 A Solução está aqui!</h2>
+            <p>A <strong>Semana da Desinflamação</strong> é um caminho validado de 7 dias que vai resetar seu corpo, reduzir a inflamação crônica e destravar sua queima de gordura naturalmente.</p>
+            <p>Não é uma dieta restritiva. É um caminho inteligente que ensina a comer correta novamente!</p>
             <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
                 💪 QUERO DESINFLAMAR MEU CORPO!
             </a>
@@ -524,7 +649,7 @@
                 <div class="benefit-card">
                     <div class="icon">🔥</div>
                     <h3>Queima de Gordura Destravada</h3>
-                    <p>Seu metabolismo volta a funcionar de forma eficiente, queimando gordura 24 horas por dia.</p>
+                    <p>Seu metabolismo volta a funcionar de forma eficiente.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="icon">⚡</div>
@@ -566,28 +691,28 @@
                 
                 <div class="pillar">
                     <h4>🥩 Pilar 1: A Montagem Inteligente do Prato</h4>
-                    <p>Aprenda a ordem exata dos alimentos no seu prato para maximizar a saciedade e acelerar a queima de gordura. Descubra como consumir no mínimo 125g de proteína por refeição e por que isso é fundamental para seus resultados.</p>
+                    <p>Aprenda a ordem exata dos alimentos no seu prato para maximizar a saciedade e acelerar a queima de gordura.</p>
                 </div>
                 
                 <div class="pillar">
-                    <h4>⏰ Pilar 2: Não Belisque Entre as Refeições</h4>
-                    <p>A regra de ouro que vai resetar seu metabolismo! Entenda por que o jejum entre as refeições é essencial para desinflamar o corpo e como fazer isso sem passar fome.</p>
+                    <h4>⏰ Pilar 2: O segredo do controle hormonal</h4>
+                    <p>A regra de ouro que vai resetar seu metabolismo!</p>
                 </div>
                 
                 <div class="pillar">
                     <h4>📋 Pilar 3: O Planejamento que Liberta</h4>
-                    <p>Sistema de organização simples que vai economizar seu tempo na cozinha e garantir que você tenha sempre opções saudáveis prontas. Inclui estratégias de pré-preparo e cardápios completos.</p>
+                    <p>Sistema de organização simples que vai economizar seu tempo na cozinha e garantir que você tenha sempre opções saudáveis prontas.</p>
                 </div>
             </div>
 
             <div class="bonus-card">
                 <h3>📚 BÔNUS #2: E-book de Receitas Desinflamatórias</h3>
-                <p>Mais de 50 receitas deliciosas e anti-inflamatórias para você variar seu cardápio durante e após a semana.</p>
+                <p>Receitas deliciosas e anti-inflamatórias para você variar seu cardápio durante e após a semana.</p>
             </div>
 
             <div class="bonus-card">
                 <h3>💧 BÔNUS #3: Calculadora de Meta de Água Personalizada</h3>
-                <p>Ferramenta exclusiva que calcula exatamente quanto de água você precisa beber por dia para potencializar seus resultados.</p>
+                <p>Ferramenta exclusiva que calcula exatamente quanto de água você precisa beber por dia para potencializar seus resultados(você pode usar para sua família também).</p>
             </div>
 
             <div class="bonus-card">
@@ -598,31 +723,31 @@
 
         <!-- Testimonials -->
         <section class="testimonials-section">
-            <h2>💬 O que nossas alunas estão dizendo:</h2>
+            <h2>💬 O que as minhas Maravilhosas estão dizendo:</h2>
             
             <div class="testimonial">
                 <p>"Em apenas 5 dias já senti uma diferença incrível! O inchaço diminuiu muito e minha energia voltou. Estou conseguindo seguir sem dificuldade."</p>
-                <div class="author">- Maria, 34 anos</div>
+                <div class="author">- Solange, 34 anos</div>
             </div>
             
             <div class="testimonial">
                 <p>"Finalmente encontrei algo que funciona! Perdi 2kg na primeira semana e o melhor: sem passar fome. Os 3 pilares mudaram minha relação com a comida."</p>
-                <div class="author">- Ana, 41 anos</div>
+                <div class="author">- Kenia, 41 anos</div>
             </div>
             
             <div class="testimonial">
                 <p>"O protocolo é simples de seguir e os resultados aparecem rápido. Minha digestão melhorou muito e não tenho mais aquela vontade louca por doces."</p>
-                <div class="author">- Carla, 28 anos</div>
+                <div class="author">- Marisa, 28 anos</div>
             </div>
         </section>
 
         <!-- Price Section -->
         <section class="price-section">
-            <h2>💰 Investimento Especial</h2>
+            <h2>Você desinflamada</h2>
             <div class="price-box">
-                <div class="old-price">De R$ 197,00</div>
-                <div class="new-price">Por apenas R$ 97,00</div>
-                <p style="font-size: 1.2em; margin-bottom: 20px;">Ou 12x de R$ 9,70</p>
+             <!--   <div class="old-price">De R$ 197,00</div> -->
+                <div class="new-price">Por apenas R$ 43,00</div>
+             <!--    <p style="font-size: 1.2em; margin-bottom: 20px;">Ou 12x de R$ 9,70</p>-->
                 
                 <div class="guarantee">
                     <h3>🛡️ Garantia de 7 Dias</h3>
@@ -631,11 +756,11 @@
             </div>
             
             <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
-                🚀 GARANTIR MINHA VAGA AGORA!
+                👉 VOU CUIDAR DE MIM!
             </a>
         </section>
 
-        <!-- Urgency Section -->
+        <!-- Urgency Section
         <section class="urgency-section">
             <h2>⚠️ ATENÇÃO: OFERTA LIMITADA!</h2>
             <p>Esta oferta especial é válida apenas para as próximas 100 pessoas ou até o final desta semana.</p>
@@ -645,21 +770,125 @@
             <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
                 ⚡ QUERO APROVEITAR AGORA!
             </a>
-        </section>
+        </section>-->
 
         <!-- Final CTA -->
         <section class="solution-section">
             <h2>🌟 Sua Nova Vida Começa Hoje!</h2>
-            <p>Não deixe para amanhã a transformação que você pode começar hoje. Sua saúde e bem-estar merecem esse investimento.</p>
+            <p>Não deixe para amanhã a transformação que você pode começar hoje.</p>
+            <p>Sua saúde e bem-estar merecem esse investimento.</p>
             <p><strong>Clique no botão abaixo e comece sua jornada de transformação agora mesmo!</strong></p>
             <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
                 💎 SIM, EU QUERO ME TRANSFORMAR!
             </a>
         </section>
 
+
+
+        <!-- Seção Quem Sou Eu -->
+        <div class="about-section">
+            <h3>✨ Quem sou eu?</h3>
+
+            <div class="about-content">
+                <div class="about-photo">
+                    <img
+                        src="eu.png"
+                        alt="Renata Borba - Nutricionista"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+                    <div class="photo-placeholder">
+                        👩‍⚕️ Renata Borba<br />
+                        Nutricionista
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <p>
+                        <strong>
+                            Muito prazer. Eu me chamo Renata Borba, nutricionista e
+                            criadora do +Maravilhosa
+                        </strong>
+                    </p>
+
+                    <p><strong>Eu fui a minha primeira paciente.</strong> Durante anos, vivi uma relação difícil com o meu corpo, a alimentação e a balança. Me sentia cansada, sem energia, com a autoestima abalada... até que decidi mudar.</p>
+
+                    <p>
+                        Através da nutrição e do controle hormonal, <strong>eliminei
+                        25kg, que nunca mais ganhei de volta!</strong> Recuperei minha
+                        saúde e, o mais importante, reencontrei o amor por mim mesma.
+                    </p>
+
+                    <p>
+                        Foi aí que nasceu minha paixão pela nutrição e o desejo de ajudar
+                        outras mulheres a passarem pela mesma transformação que eu vivi —
+                        <strong>sem dietas restritivas, sem culpa e com resultados
+                        duradouros.</strong>
+                    </p>
+
+                    <p>
+                        Hoje, acompanho de perto mulheres
+                        reais que querem emagrecer, equilibrar seus hormônios e viver com
+                        mais leveza, saúde e liberdade.
+                    </p>
+
+                    <p><strong>Porque sim, é possível emagrecer de forma definitiva comendo de verdade e respeitando seu corpo.</strong></p>
+
+                    <p class="final-message">
+                        <strong>Seja bem-vinda ao início da sua nova história. Vamos juntas?</strong>
+                    </p>
+                </div>
+
+            </div>
+<!--
+            <a href="https://renataborbanutri.github.io/semana_pagina/" class="programa-btn" target="_blank">
+                🌟 OFERTA EXCLUSIVA 🌟
+            </a>
+--><div class="support-block" role="region" aria-label="Canais de suporte">
+  <div class="support-copy">
+    <h3>Precisa de ajuda agora?</h3>
+    <p>Fale com meu suporte.</p>
+  </div>
+
+  <div class="support-ctas">
+    <!-- WhatsApp: use somente dígitos no wa.me -->
+    <a
+      class="btn btn--whatsapp"
+      href="https://wa.me/16153304647?text=Estou%20na%20semana%20da%20Desinflama%C3%A7%C3%A3o"
+      target="_blank"
+      rel="noopener"
+      aria-label="Abrir conversa no WhatsApp com mensagem: Estou na semana da Desinflamação"
+    >
+      WhatsApp do Suporte
+    </a>
+
+    <!-- E-mail -->
+    <a
+      class="btn btn--email"
+      href="mailto:suportedamaravilhosa@gmail.com?subject=Suporte%20%2BMaravilhosa&body=Estou%20na%20semana%20da%20Desinflama%C3%A7%C3%A3o"
+      aria-label="Enviar e-mail para suportedamaravilhosa@gmail.com"
+    >
+      Suporte por e-mail
+    </a>
+    <!-- Instagram -->
+    <a
+      class="btn btn--instagram"
+      href="https://instagram.com/nutricionistanoseua"
+      target="_blank"
+      rel="me noopener nofollow"
+      aria-label="Abrir o Instagram da Renata Borba em nova aba"
+    >
+      Instagram @nutricionistanoseua
+    </a>
+  </div>
+</div>
+        </div>
+
+
+
+
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2024 Semana da Desinflamação. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Semana da Desinflamação. Todos os direitos reservados.</p>
             <p>Este produto não substitui o acompanhamento médico. Consulte sempre um profissional de saúde.</p>
         </footer>
     </div>
