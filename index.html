@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana da Desinflamação - Transforme Sua Vida em 7 Dias</title>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;
+        n.push=n;
+        n.loaded=!0;
+        n.version='2.0';
+        n.queue=[];
+        t=b.createElement(e);
+        t.async=!0;
+        t.src=v;
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)
+        }(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '595481199331116');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=595481199331116&ev=PageView&noscript=1"/>
+    </noscript>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #D64C4A 0%, #DEA37B 50%, #FCF9CE 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(214, 76, 74, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(252, 249, 206, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            color: #D64C4A;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero .highlight {
+            background: linear-gradient(45deg, #DEA37B, #FCF9CE);
+            color: #D64C4A;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3em;
+            display: inline-block;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(222, 163, 123, 0.4);
+            border: 2px solid #D64C4A;
+            animation: pulse 2s infinite;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(45deg, #D64C4A, #DEA37B);
+            color: white;
+            padding: 25px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 15px 35px rgba(214, 76, 74, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(214, 76, 74, 0.6);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(214, 76, 74, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(252, 249, 206, 0.8);
+        }
+
+        .problem-section h2 {
+            font-size: 2.5em;
+            color: #D64C4A;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .problem-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .problem-list li {
+            background: linear-gradient(90deg, #FCF9CE, rgba(252, 249, 206, 0.5));
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #D64C4A;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(214, 76, 74, 0.1);
+        }
+
+        .problem-list li:hover {
+            transform: translateX(10px);
+            background: linear-gradient(90deg, #DEA37B, rgba(222, 163, 123, 0.3));
+        }
+
+        .problem-list li::before {
+            content: '❌ ';
+            font-size: 1.3em;
+            margin-right: 15px;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: linear-gradient(135deg, #D64C4A 0%, #DEA37B 100%);
+            color: white;
+            padding: 60px 30px;
+            border-radius: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(214, 76, 74, 0.4);
+            border: 3px solid #FCF9CE;
+        }
+
+        .solution-section h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .solution-section p {
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(214, 76, 74, 0.15);
+        }
+
+        .benefits-section h2 {
+            font-size: 2.5em;
+            color: #D64C4A;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #FCF9CE 0%, #DEA37B 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(222, 163, 123, 0.3);
+            border: 2px solid #D64C4A;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-card .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5em;
+            color: #D64C4A;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* Bonus Section */
+        .bonus-section {
+            background: linear-gradient(135deg, #DEA37B 0%, #FCF9CE 100%);
+            padding: 60px 30px;
+            border-radius: 25px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(222, 163, 123, 0.4);
+            border: 3px solid #D64C4A;
+        }
+
+        .bonus-section h2 {
+            font-size: 3em;
+            color: #D64C4A;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .bonus-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(214, 76, 74, 0.2);
+            border: 2px solid #D64C4A;
+        }
+
+        .bonus-card h3 {
+            font-size: 2em;
+            color: #D64C4A;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pillar {
+            background: linear-gradient(90deg, #FCF9CE, rgba(252, 249, 206, 0.5));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #D64C4A;
+        }
+
+        .pillar h4 {
+            font-size: 1.4em;
+            color: #D64C4A;
+            margin-bottom: 15px;
+        }
+
+        .pillar p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(214, 76, 74, 0.15);
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.5em;
+            color: #D64C4A;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #FCF9CE 0%, #DEA37B 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(222, 163, 123, 0.3);
+            border: 2px solid #D64C4A;
+        }
+
+        .testimonial p {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            color: #D64C4A;
+            text-align: right;
+        }
+
+        /* Price Section */
+        .price-section {
+            background: linear-gradient(135deg, #D64C4A 0%, #DEA37B 100%);
+            color: white;
+            padding: 60px 30px;
+            border-radius: 25px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(214, 76, 74, 0.4);
+            border: 3px solid #FCF9CE;
+        }
+
+        .price-section h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-box {
+            background: rgba(252, 249, 206, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            border: 3px solid #FCF9CE;
+        }
+
+        .old-price {
+            font-size: 1.5em;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .new-price {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .guarantee {
+            background: rgba(252, 249, 206, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #FCF9CE;
+        }
+
+        /* Urgency Section */
+        .urgency-section {
+            background: linear-gradient(135deg, #FF6B6B 0%, #D64C4A 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(214, 76, 74, 0.4);
+            border: 3px solid #FCF9CE;
+            animation: pulse 2s infinite;
+        }
+
+        .urgency-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 10px 25px rgba(214, 76, 74, 0.15);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .cta-button {
+                padding: 20px 40px;
+                font-size: 1.2em;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>🌿 Semana da <strong>Desinflamação</strong></h1>
+            <p class="subtitle">7 dias que vão transformar sua vida e destravar a queima de gordura!</p>
+            <div class="highlight">
+                ✨ Reduza o inchaço, aumente a energia e sinta-se mais leve em apenas 1 semana! ✨
+            </div>
+            <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
+                🔥 QUERO COMEÇAR AGORA!
+            </a>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem-section">
+            <h2>Você se identifica com algum desses problemas?</h2>
+            <ul class="problem-list">
+                <li>Sente o corpo sempre inchado e pesado</li>
+                <li>Tem dificuldade para perder peso, mesmo fazendo dieta</li>
+                <li>Vive cansada e sem energia durante o dia</li>
+                <li>Sofre com digestão lenta e desconforto abdominal</li>
+                <li>Tem vontade constante de comer doces e carboidratos</li>
+                <li>Sente que seu metabolismo está "travado"</li>
+                <li>Acorda inchada e vai dormir ainda mais inchada</li>
+            </ul>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution-section">
+            <h2>🎯 A Solução Está Aqui!</h2>
+            <p>A <strong>Semana da Desinflamação</strong> é um protocolo científico de 7 dias que vai resetar seu corpo, reduzir a inflamação crônica e destravar sua queima de gordura naturalmente.</p>
+            <p>Não é uma dieta restritiva. É um método inteligente que ensina seu corpo a funcionar da forma correta novamente!</p>
+            <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
+                💪 QUERO DESINFLAMAR MEU CORPO!
+            </a>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <h2>O que você vai conquistar em 7 dias:</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🔥</div>
+                    <h3>Queima de Gordura Destravada</h3>
+                    <p>Seu metabolismo volta a funcionar de forma eficiente, queimando gordura 24 horas por dia.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">⚡</div>
+                    <h3>Energia Renovada</h3>
+                    <p>Desperte com disposição e mantenha a energia alta durante todo o dia.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🌸</div>
+                    <h3>Redução do Inchaço</h3>
+                    <p>Elimine a retenção de líquidos e sinta-se mais leve e desinchada.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🎯</div>
+                    <h3>Controle da Fome</h3>
+                    <p>Reduza a compulsão por doces e carboidratos de forma natural.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">💚</div>
+                    <h3>Digestão Melhorada</h3>
+                    <p>Intestino funcionando perfeitamente e digestão mais leve.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">✨</div>
+                    <h3>Bem-estar Geral</h3>
+                    <p>Melhora do humor, do sono e da autoestima.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonus Section -->
+        <section class="bonus-section">
+            <h2>🎁 BÔNUS EXCLUSIVOS INCLUSOS!</h2>
+            
+            <div class="bonus-card">
+                <h3>🏛️ BÔNUS #1: Os 3 Pilares do Protocolo Leveza</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px; color: #D64C4A;">
+                    <strong>Um guia completo que revela os segredos para montar pratos que desinflamam e aceleram o metabolismo!</strong>
+                </p>
+                
+                <div class="pillar">
+                    <h4>🥩 Pilar 1: A Montagem Inteligente do Prato</h4>
+                    <p>Aprenda a ordem exata dos alimentos no seu prato para maximizar a saciedade e acelerar a queima de gordura. Descubra como consumir no mínimo 125g de proteína por refeição e por que isso é fundamental para seus resultados.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h4>⏰ Pilar 2: Não Belisque Entre as Refeições</h4>
+                    <p>A regra de ouro que vai resetar seu metabolismo! Entenda por que o jejum entre as refeições é essencial para desinflamar o corpo e como fazer isso sem passar fome.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h4>📋 Pilar 3: O Planejamento que Liberta</h4>
+                    <p>Sistema de organização simples que vai economizar seu tempo na cozinha e garantir que você tenha sempre opções saudáveis prontas. Inclui estratégias de pré-preparo e cardápios completos.</p>
+                </div>
+            </div>
+
+            <div class="bonus-card">
+                <h3>📚 BÔNUS #2: E-book de Receitas Desinflamatórias</h3>
+                <p>Mais de 50 receitas deliciosas e anti-inflamatórias para você variar seu cardápio durante e após a semana.</p>
+            </div>
+
+            <div class="bonus-card">
+                <h3>💧 BÔNUS #3: Calculadora de Meta de Água Personalizada</h3>
+                <p>Ferramenta exclusiva que calcula exatamente quanto de água você precisa beber por dia para potencializar seus resultados.</p>
+            </div>
+
+            <div class="bonus-card">
+                <h3>🍯 BÔNUS #4: Guia Completo sobre Açúcar Escondido</h3>
+                <p>Descubra onde estão os açúcares ocultos que sabotam seus resultados e aprenda a identificá-los facilmente.</p>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <h2>💬 O que nossas alunas estão dizendo:</h2>
+            
+            <div class="testimonial">
+                <p>"Em apenas 5 dias já senti uma diferença incrível! O inchaço diminuiu muito e minha energia voltou. Estou conseguindo seguir sem dificuldade."</p>
+                <div class="author">- Maria, 34 anos</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"Finalmente encontrei algo que funciona! Perdi 2kg na primeira semana e o melhor: sem passar fome. Os 3 pilares mudaram minha relação com a comida."</p>
+                <div class="author">- Ana, 41 anos</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"O protocolo é simples de seguir e os resultados aparecem rápido. Minha digestão melhorou muito e não tenho mais aquela vontade louca por doces."</p>
+                <div class="author">- Carla, 28 anos</div>
+            </div>
+        </section>
+
+        <!-- Price Section -->
+        <section class="price-section">
+            <h2>💰 Investimento Especial</h2>
+            <div class="price-box">
+                <div class="old-price">De R$ 197,00</div>
+                <div class="new-price">Por apenas R$ 97,00</div>
+                <p style="font-size: 1.2em; margin-bottom: 20px;">Ou 12x de R$ 9,70</p>
+                
+                <div class="guarantee">
+                    <h3>🛡️ Garantia de 7 Dias</h3>
+                    <p>Se você não ficar satisfeita com os resultados, devolvemos 100% do seu dinheiro!</p>
+                </div>
+            </div>
+            
+            <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
+                🚀 GARANTIR MINHA VAGA AGORA!
+            </a>
+        </section>
+
+        <!-- Urgency Section -->
+        <section class="urgency-section">
+            <h2>⚠️ ATENÇÃO: OFERTA LIMITADA!</h2>
+            <p>Esta oferta especial é válida apenas para as próximas 100 pessoas ou até o final desta semana.</p>
+            <div class="countdown" id="countdown">
+                ⏰ Restam apenas algumas horas!
+            </div>
+            <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
+                ⚡ QUERO APROVEITAR AGORA!
+            </a>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="solution-section">
+            <h2>🌟 Sua Nova Vida Começa Hoje!</h2>
+            <p>Não deixe para amanhã a transformação que você pode começar hoje. Sua saúde e bem-estar merecem esse investimento.</p>
+            <p><strong>Clique no botão abaixo e comece sua jornada de transformação agora mesmo!</strong></p>
+            <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
+                💎 SIM, EU QUERO ME TRANSFORMAR!
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Semana da Desinflamação. Todos os direitos reservados.</p>
+            <p>Este produto não substitui o acompanhamento médico. Consulte sempre um profissional de saúde.</p>
+        </footer>
+    </div>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta">
+        <a href="https://pay.hotmart.com/H101535612J?off=pxg6cqv1" class="cta-button" target="_blank">
+            🔥 COMPRAR AGORA!
+        </a>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Track CTA clicks
+        document.querySelectorAll('a[href*="hotmart"]').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout');
+                }
+            });
+        });
+
+        // Simple countdown timer (resets daily)
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('countdown').innerHTML = `⏰ ${hours}h ${minutes}min restantes!`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000); // Update every minute
+    </script>
+</body>
+</html>
+
